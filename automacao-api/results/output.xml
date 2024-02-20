@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-02-20T15:09:38.874593" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes-Api" source="C:\automacao-sap\testes-api.robot">
+<test id="s1-t1" name="Primeiro GET no faker API" line="8">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-20T15:09:38.979063" level="INFO">Creating Session using : alias=testes_api, url=https://fakerapi.it/api/v1/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=testes_api</arg>
+<arg>url=https://fakerapi.it/api/v1/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-20T15:09:38.979063" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-02-20T15:09:40.042095" level="INFO">GET Request : url=https://fakerapi.it/api/v1/addresses?_quantity=1 
+ path_url=/api/v1/addresses?_quantity=1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-02-20T15:09:40.043089" level="INFO">GET Response : url=https://fakerapi.it/api/v1/addresses?_quantity=1 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Powered-By': 'PHP/7.3.33', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 20 Feb 2024 18:09:12 GMT', 'X-RateLimit-Limit': '30', 'X-RateLimit-Remaining': '29', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Max-Age': '86400', 'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With', 'X-UA-Compatible': 'IE=Edge,chrome=1', 'Content-Encoding': 'gzip'} 
+ body={"status":"OK","code":200,"total":1,"data":[{"id":1,"street":"892 Corkery Turnpike","streetName":"Julianne Parks","buildingNumber":"460","city":"West Donna","zipcode":"36309-7631","country":"Jordan","county_code":"VI","latitude":-33.140718,"longitude":146.687473}]} 
+ </msg>
+<msg time="2024-02-20T15:09:40.043089" level="INFO">C:\Users\monique.guimarães\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1056: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakerapi.it'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-20T15:09:40.044093" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>alias=testes_api</arg>
+<arg>url=addresses?_quantity=1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-20T15:09:38.979063" elapsed="1.065030"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${RESPONSE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-20T15:09:40.044093" elapsed="0.000997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${RESPONSE.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-20T15:09:40.045090" elapsed="0.001001"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-02-20T15:09:40.362865" level="INFO">GET Request : url=https://fakerapi.it/api/v1/books?_quantity=1 
+ path_url=/api/v1/books?_quantity=1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-02-20T15:09:40.362865" level="INFO">GET Response : url=https://fakerapi.it/api/v1/books?_quantity=1 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Powered-By': 'PHP/7.3.33', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 20 Feb 2024 18:09:13 GMT', 'X-RateLimit-Limit': '30', 'X-RateLimit-Remaining': '29', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Max-Age': '86400', 'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With', 'X-UA-Compatible': 'IE=Edge,chrome=1', 'Content-Encoding': 'gzip'} 
+ body={"status":"OK","code":200,"total":1,"data":[{"id":1,"title":"But the snail.","author":"Margarita Yost","genre":"Quasi","description":"CHAPTER VI. Pig and Pepper For a minute or two, she made out that the Gryphon only answered 'Come on!' cried the Mock Turtle. 'Hold your tongue, Ma!' said the March Hare,) '--it was at in all my.","isbn":"9796509034417","image":"http:\/\/placeimg.com\/480\/640\/any","published":"1995-09-26","publisher":"Hic Blanditiis"}]} 
+ </msg>
+<msg time="2024-02-20T15:09:40.362865" level="INFO">C:\Users\monique.guimarães\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1056: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakerapi.it'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-20T15:09:40.364201" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>alias=testes_api</arg>
+<arg>url=books?_quantity=1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-02-20T15:09:40.046091" elapsed="0.318110"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${RESPONSE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-20T15:09:40.365184" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${RESPONSE.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-20T15:09:40.365184" elapsed="0.001007"/>
+</kw>
+<kw name="Session Exists" owner="RequestsLibrary">
+<msg time="2024-02-20T15:09:40.367189" level="INFO">${return} = True</msg>
+<var>${return}</var>
+<arg>alias=testes_api</arg>
+<doc>Return True if the session has been already created</doc>
+<status status="PASS" start="2024-02-20T15:09:40.366191" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${return}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-20T15:09:40.367189" elapsed="0.000000"/>
+</kw>
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-02-20T15:09:40.368189" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-02-20T15:09:40.368189" elapsed="0.000000"/>
+</kw>
+<kw name="Session Exists" owner="RequestsLibrary">
+<msg time="2024-02-20T15:09:40.368189" level="INFO">${return} = False</msg>
+<var>${return}</var>
+<arg>alalias=testes_api</arg>
+<doc>Return True if the session has been already created</doc>
+<status status="PASS" start="2024-02-20T15:09:40.368189" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-02-20T15:09:38.978017" elapsed="1.391177"/>
+</test>
+<status status="PASS" start="2024-02-20T15:09:38.876603" elapsed="1.493613"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testes-Api">Testes-Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
